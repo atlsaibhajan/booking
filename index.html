@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlanta Shridi Sai Bhajan Bookng</title>
+    <title>Atlanta Shirdi Sai Bhajan Booking</title>
     <style>
         /*
          * Basic reset for margin and padding, and set dimensions to 100%
@@ -52,10 +52,12 @@
             // Find the iframe element by its ID
             const iframeElement = document.getElementById('fullscreenIframe');
 	   let eventId = getQueryParam("eventId");
-	   if(eventId != ""){
-		iframeURL = iframeURL+'?eventId='+eventId;
+           if(eventId == null) {
+		eventId = getQueryParam("eventid");
+           }
+	   if(eventId){
+		iframeURL = iframeURL+'?eventid='+eventId;
 	   }
-
             // Check if the element was found
             if (iframeElement) {
                 // Set the src attribute of the iframe to the desired URL
