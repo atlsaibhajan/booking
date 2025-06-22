@@ -46,7 +46,7 @@
 	    let iframeURL = "https://script.google.com/macros/s/AKfycbxpCGmRV4sB78Co6fk_QdAsTz7ezoNW7_lapF7-rModJJ1RyuwWU7JxpXuPk8ea2DHLbw/exec";
 	    let paramString = window.location.search;
 	   if(paramString){
-		iframeURL = iframeURL+'?'+paramString;
+		iframeURL = iframeURL+paramString;
 		alert("|" + iframeURL +"|");
 	   }
             // Check if the element was found
