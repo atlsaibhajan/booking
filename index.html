@@ -37,26 +37,15 @@
     <iframe id="fullscreenIframe"></iframe>
 
     <script>
-        // Define the URL you want to load into the iframe
-        // ** IMPORTANT: Replace 'https://www.example.com' with your actual URL **
-        let iframeURL = 'https://script.google.com/macros/s/AKfycbxpCGmRV4sB78Co6fk_QdAsTz7ezoNW7_lapF7-rModJJ1RyuwWU7JxpXuPk8ea2DHLbw/exec';
-
-      function getQueryParam(param) {
-          const urlParams = new URLSearchParams(window.location.search);
-          return urlParams.get(param);
-      } 
 
 
         // Add an event listener that waits for the entire page to load
         window.addEventListener('load', function() {
             // Find the iframe element by its ID
             const iframeElement = document.getElementById('fullscreenIframe');
-	   let eventId = getQueryParam("eventId");
-           if(eventId == null) {
-		eventId = getQueryParam("eventid");
-           }
-	   if(eventId){
-		iframeURL = iframeURL+'?eventid='+eventId;
+	    let paramString = window.location.search;
+	   if(paramString){
+		iframeURL = iframeURL+'?'+paramString;
 	   }
             // Check if the element was found
             if (iframeElement) {
